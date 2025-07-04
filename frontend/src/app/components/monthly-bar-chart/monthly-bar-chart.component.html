@@ -1,0 +1,12 @@
+<div class="chart-back-container">
+  <button routerLink="/home" class="back-btn">← Back</button>
+</div>
+<div class="chart-container">
+    <h3>📊 Avg Monthly Closing Prices</h3>
+    <canvas baseChart
+    [datasets]="barChartData"
+        [labels]="barChartLabels"
+        [options]="barChartOptions"
+        [type]="'bar'">
+    </canvas>
+</div>

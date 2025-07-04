@@ -1,0 +1,10 @@
+# Ignore all node_modules folders recursively
+**/node_modules/
+
+# Ignore all .env files anywhere in the repo
+**/.env
+
+# Optional: ignore log files, build outputs, etc.
+*.log
+dist/
+coverage/
