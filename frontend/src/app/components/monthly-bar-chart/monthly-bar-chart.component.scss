@@ -1,0 +1,41 @@
+.chart-back-container {
+  width: 100%;
+  padding-left: 2rem; 
+  margin-top: 1rem;
+
+  .back-btn {
+    padding: 0.5rem 1.2rem;
+    font-size: 14px;
+    background-color: #6f42c1;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background-color: #5a379f;
+    }
+  }
+}
+.chart-container {
+    max-width: 900px;
+    margin: 1rem auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    text-align: center;
+
+  h3 {
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+    font-size: 22px;
+    font-weight: 600;
+  }
+
+  canvas {
+    width: 100% !important;
+    height: auto !important;
+  }
+}

@@ -1,0 +1,50 @@
+<!-- <div class="modal">
+    <h3>Add Stock Entry</h3>
+    <label>Open: <input type="number" [(ngModel)]="open"></label><br>
+    <label>Close: <input type="number" [(ngModel)]="close"></label><br>
+    <button (click)="submit()">Submit</button>
+    <button (click)="cancel()">Cancel</button>
+</div> -->
+
+
+<!-- Using ngforms -->
+ <!-- <div class="modal">
+  <h3>Add Stock Entry</h3>
+  <form #entryForm="ngForm" (ngSubmit)="submit(entryForm)">
+    <label>Open: 
+        <input type="number" name="open" [(ngModel)]="open" required min="0"/>
+    </label>
+    <br>
+    <label>Close: 
+        <input type="number" name="close" [(ngModel)]="close" required min="0"/>
+    </label>
+    <br><br>
+    <button type="submit" [disabled]="!entryForm.valid">Submit</button>
+    <button type="button" (click)="cancel()">Cancel</button>
+  </form>
+  </div> -->
+
+<!-- Not required tho. -->
+<!-- <div *ngIf="entryForm.submitted && !entryForm.valid">
+  Please enter valid Open and Close values.
+</div> -->
+
+
+
+<div class="modal-backdrop">
+    <div class="modal-content">
+        <h3>Add Stock Entry</h3>
+        <form #entryForm="ngForm" (ngSubmit)="submit(entryForm)">
+            <label>Open:
+                <input type="number" name="open" [(ngModel)]="open" required min="0"/>
+            </label>
+            <label>Close:
+                <input type="number" name="close" [(ngModel)]="close" required min="0"/>
+            </label>
+            <div class="modal-actions">
+                <button type="submit" [disabled]="!entryForm.valid">Submit</button>
+                <button type="button" (click)="cancel()">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>

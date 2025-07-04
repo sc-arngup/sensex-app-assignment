@@ -1,0 +1,39 @@
+<div class="logout-container">
+  <button (click)="logout()" class="logout-btn">Logout</button>
+</div>
+<!-- <h2>BSE Sensex 50 Data (Page {{currentPage}})</h2> -->
+ <h2>BSE Sensex 50 Data</h2>
+ <div class="top-controls">
+  <button routerLink="/chart" class="chart-btn">📊 Show Chart</button>
+  <button (click)="showModal=true">+ Add New Entry</button>
+</div>
+<table>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Open</th>
+      <th>Close</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let stock of stocks">
+      <td>{{stock.Date | date:'shortDate'}}</td>
+      <td>{{stock.Open}}</td>
+      <td>{{stock.Close}}</td>
+    </tr>
+  </tbody>
+</table>
+<div class="page-label">Page {{currentPage}}</div>
+<div class="pagination-controls">
+  <button (click)="prevPage()" [disabled]="currentPage===1">Previous</button>
+  <button (click)="nextPage()" [disabled]="!hasNextPage">Next</button>
+</div>
+<!-- <div style="margin-top: 20px;">
+  <button (click)="prevPage()" [disabled]="currentPage===1" style="margin-right: 10px;">Previous</button>
+  <button (click)="nextPage()" [disabled]="!hasNextPage">Next</button>
+</div> -->
+<!-- <div style="margin-top: 20px;">
+  <button (click)="showModal=true">+ Add New Entry</button>
+</div> -->
+<app-entry-modal *ngIf="showModal" (addEntry)="addNewEntry($event)" (closeModal)="showModal=false">
+</app-entry-modal>
